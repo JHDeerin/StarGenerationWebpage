@@ -37,12 +37,8 @@ window.onload = function setup() {
     window.requestAnimationFrame(drawStars);
 }
 
-/*document.addEventListener("click", function(evt){
-    offsetStarParallaxX(evt.clientX * -2);
-})*/
-
 function moveStarsWhenLinkClicked(linkNum) {
-    offsetStarParallaxX(linkNum * CANVAS_WIDTH * -2);
+    offsetStarParallaxX(linkNum * CANVAS_WIDTH * 2);
 }
 
 function generateStars() {
