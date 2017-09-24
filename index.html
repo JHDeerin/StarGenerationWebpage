@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, viewport-fit=cover">
+
+        <title>Starfield Generation Test</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+        <link href="cssReset.css" rel="stylesheet">
+        <link href="starGenerationTest.css" rel="stylesheet">
+
+        <!-- Generated for favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <nav>
+            <a id="homeLink" href="#" class="is-current-page" data-index="0">
+                <span>
+                <img src="homeHoverBackground_transparent.svg">
+                </span>
+            </a>
+            <a id="aboutLink" href="#" data-index="1">
+                <span>
+                <img src="aboutHoverBackground_transparent.svg">
+                </span>
+            </a>
+            <a id="worksLink" href="#" data-index="2">
+                <span>
+                <img src="worksHoverBackground_transparent.svg">
+                </span>
+            </a>
+            <a id="resumeLink" href="#" data-index="3">
+                <span>
+                <img src="resumeHoverBackground_transparent.svg">
+                </span>
+            </a>
+            <a id="contactLink" href="#" data-index="4">
+                <span>
+                <img src="contactHoverBackground_transparent.svg">
+                </span>
+            </a>
+        </nav>
+
+        <header>
+            <h1 id="hi-im-jake">Hi. I'm Jake.</h1>
+            <h1 id="i-write-code">I write code.</h1>
+        </header>
+
+        <div id="canvasContainer">
+            <canvas id="canvas" aria-hidden=""></canvas>
+            <img id="footerSVG" src="footerSilhouetteMockup.svg" alt="A farmhouse and rolling hills, outlined against a night sky"> <!-- needs to be compressed w/ https://jakearchibald.github.io/svgomg/ -->
+        </div>
+
+        <!-- **WARNING** this script was made purely as a test, using the most dirty and unproffesional hacks known to (a) man; attempts to use this in production code will result in faces melting and refactoring-related tears -->
+        <script src="starGeneration.js" defer></script>
+        <script src="pageNavigation.js" defer></script>
+    </body>
+</html>

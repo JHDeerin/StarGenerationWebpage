@@ -1,0 +1,255 @@
+/* AHHHHHHH REFACTOR NEEDED AHHHHHHHHHH!!!!!!!! */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: rgb(26, 26, 26);
+}
+
+header, nav {
+    z-index: 999;
+    position: fixed;
+
+    min-width: 500px;
+    margin: 0 auto;
+
+    left: 0;
+    right: 0;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color: #f2f2f2;
+}
+
+header {
+    width: 65%;
+    margin-top: 40vh;
+
+    text-align: center;
+    line-height: 10.5em;
+    line-height: 9.5vw;
+
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 11vw 2.5vw rgba(0, 0, 0, 0.15);
+    border-radius: 3vw;
+    /*transition: 0.5s ease all;*/
+}
+
+nav {
+    width: 50%;
+    margin-top: 65px;
+
+    overflow: visible;
+    white-space: nowrap;
+
+    text-align: center;
+    text-decoration: none;
+
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 4s 1 forwards;
+}
+
+nav a {
+    display: inline-block;
+    /*overflow: hidden;*/
+
+    min-width: 60px;
+    min-height: 60px;
+    width: 3.125vw; /*corresponds to 60px @ 1920*/
+    height: 3.125vw;
+
+    margin: 0 auto;
+    margin-left: 2%;
+    margin-right: 2%;
+
+    white-space: normal;
+    height: width;
+
+    font-size: 1.5em;
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    border-radius: 50%;
+    /*border: 0.390625vw solid #262626;*/
+    border: 3.5px solid #262626;
+
+    transition: ease-out all 0.2s;
+}
+nav a:hover {
+    transform: scale(2.0);
+
+    /* rescaling elements to remain same size */
+    font-size: 0.75em;
+    border: 1.75px solid #262626;
+
+    margin-right: 50px;
+    margin-left: 50px;
+}
+nav a span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    background-color: transparent;
+    overflow: hidden;
+}
+nav a img {
+    width: 100%;
+    height: 100%;
+
+    left: 0; top: 0; right:0; bottom: 0;
+    opacity: 0;
+    transition: inherit;
+}
+nav a:hover img {
+    opacity: 1;
+}
+nav a:after {
+    margin-right: 3px;
+    position: absolute;
+    display: block;
+    text-decoration: none;
+
+    min-width: 60px;
+    min-height: 60px;
+    width: 3.125vw; /*corresponds to 60px @ 1920*/
+    height: 3.125vw;
+
+    text-shadow: 0 0 3px black;
+}
+
+#homeLink.is-current-page {
+    background-color: #73b9e5;
+}
+#homeLink:hover {
+    background-color: #101054; /*needed due to alias problems :(*/
+}
+#homeLink::after {
+    content: "home";
+}
+
+#aboutLink.is-current-page {
+    background-color: #e57272;
+}
+#aboutLink:hover {
+    background-color: #d92b2b;
+}
+#aboutLink::after {
+    content: "about me";
+}
+
+#worksLink.is-current-page {
+    background-color: #e5be72;
+}
+#worksLink:hover {
+    background-color: #e5a72e;
+}
+#worksLink::after {
+    content: "what i'm doing";
+}
+
+#resumeLink.is-current-page {
+    background-color: #ce72e5;
+}
+#resumeLink:hover {
+    background-color: #c02ee5;
+}
+#resumeLink::after {
+    content: "resume";
+}
+
+#contactLink.is-current-page {
+    background-color: #72e59d;
+}
+#contactLink:hover {
+    background-color: #37f57f;
+}
+#contactLink::after {
+    content: "contact";
+}
+
+header h1 {
+    font-size: 10em;
+    font-size: 9vw;
+
+    padding: 0;
+    margin: 0;
+}
+
+#hi-im-jake {
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; /*keeps opacity from resetting*/
+}
+
+#i-write-code {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 3s 1 forwards;
+}
+
+#canvasContainer {
+    position: relative;
+    width: 100%;
+    height: 120vw;
+
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0; 
+
+    background: #0a0a33;
+    background-image: linear-gradient(to bottom, #0a0a33 0%, #0a0a33 40%, #454763 64.5%, #bb9d78 86.8%, #f6e183 100%);
+}
+
+canvas {
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0; 
+}
+
+#footerSVG {
+    position: absolute;
+    z-index: 99;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+    }
+    nav a {
+        min-width: 90px;
+        min-height: 90px;
+
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    nav a::after {
+        min-width: 90px;
+        min-height: 90px;
+    }
+}
